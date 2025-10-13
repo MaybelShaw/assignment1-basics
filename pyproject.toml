@@ -19,6 +19,7 @@ dependencies = [
     "tqdm>=4.67.1",
     "wandb>=0.19.7",
     "ty>=0.0.1a16",
+    "scalene>=1.5.55",
 ]
 
 [build-system]
@@ -50,3 +51,7 @@ extend-select = ["UP"]
 ignore = [
     "F722"
 ]
+
+ [[tool.uv.index]]
+ name = "aliyun"
+ url  = "https://mirrors.aliyun.com/pypi/simple/"
