@@ -18,13 +18,13 @@ def train_bpe_with_python(input_path: str, vocab_size: int, special_tokens: list
     vocab: dict[int, bytes] = {}
     token2id = {}
 
-    for st in special_tokens:
-        vocab[len(vocab)] = st.encode("utf-8")
-        token2id[st.encode("utf-8")] = len(token2id)
-
     for i in range(256):
         vocab[len(vocab)] = bytes([i])
         token2id[bytes([i])] = len(token2id)
+
+    for st in special_tokens:
+        vocab[len(vocab)] = st.encode("utf-8")
+        token2id[st.encode("utf-8")] = len(token2id)
 
     # print(vocab)
     # print(token2id)

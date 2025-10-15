@@ -171,5 +171,5 @@ cython_debug/
 # serialized files
 /cs336_basics/*.json
 
-# unfinished work
-/cs336_basics/tokenizer.py
+# # unfinished work
+# /cs336_basics/tokenizer.py
