@@ -395,9 +395,7 @@ def run_silu(in_features: Float[Tensor, " ..."]) -> Float[Tensor, " ..."]:
     raise NotImplementedError
 
 
-def run_get_batch(
-    dataset: npt.NDArray, batch_size: int, context_length: int, device: str
-) -> tuple[torch.Tensor, torch.Tensor]:
+def run_get_batch(dataset: npt.NDArray, batch_size: int, context_length: int, device: str) -> tuple[torch.Tensor, torch.Tensor]:
     """
     Given a dataset (a 1D numpy array of integers) and a desired batch size and
     context length, sample language modeling input sequences and their corresponding
@@ -559,7 +557,10 @@ def get_tokenizer(
     Returns:
         A BPE tokenizer that uses the provided vocab, merges, and special tokens.
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    from cs336_basics.tokenizer import Tokenizer
+
+    return Tokenizer(vocab, merges, special_tokens)
 
 
 def run_train_bpe(
@@ -592,5 +593,4 @@ def run_train_bpe(
     # raise NotImplementedError
     from cs336_basics.bpe import train_bpe
 
-    return train_bpe(input_path,vocab_size,special_tokens)
-
+    return train_bpe(input_path, vocab_size, special_tokens)
